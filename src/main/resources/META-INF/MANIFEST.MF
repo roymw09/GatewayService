@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: org.ac.cst8277.williams.roy.gatewayservice.GatewayServiceApp
+ lication
+

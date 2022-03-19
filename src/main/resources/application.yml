@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: usermanagement-service
+          uri: lb://usermanagement-service
+          predicates:
+            - Path=/users/**
+        - id: subscriber-service
+          uri: lb://subscriber-service
+          predicates:
+            - Path=/sub/**
+        - id: publish-service
+          uri: lb://publish-service
+          predicates:
+            - Path=/pubService/**
+  application:
+    name: api-gateway
+server:
+  port: 8080
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
