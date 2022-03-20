@@ -16,7 +16,7 @@ spring:
         - id: publish-service
           uri: lb://publish-service
           predicates:
-            - Path=/pubService/**
+            - Path=/pub/**
   application:
     name: api-gateway
 server:
