@@ -8,7 +8,7 @@ spring:
         - id: usermanagement-service
           uri: lb://usermanagement-service
           predicates:
-            - Path=/users/**
+            - Path=/users/**, /authenticate/**
         - id: subscriber-service
           uri: lb://subscriber-service
           predicates:
